@@ -40,7 +40,7 @@ public class TwoThousandLines {
             g2d.setColor(Color.DARK_GRAY);
             g2d.translate(SIZE / 2, SIZE / 2);
             g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            IntStream.rangeClosed(1, LINES).mapToObj(this::getLine).collect(toList()).forEach(g2d::draw);
+            IntStream.rangeClosed(1, LINES).mapToObj(this::getLine).forEach(g2d::draw);
         }
 
         private Line2D.Double getLine(int n) {
