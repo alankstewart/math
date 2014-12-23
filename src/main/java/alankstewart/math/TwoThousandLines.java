@@ -18,7 +18,6 @@ import static java.util.stream.Collectors.toList;
 public class TwoThousandLines {
 
     private static final int SIZE = 768;
-    private static final int SCALE = SIZE * 15 / 32;
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
@@ -33,6 +32,7 @@ public class TwoThousandLines {
     static class LineComponent extends JComponent {
 
         private static final int LINES = 2000;
+        private static final int SCALE = SIZE * 15 / 32;
 
         @Override
         public void paintComponent(Graphics g) {
