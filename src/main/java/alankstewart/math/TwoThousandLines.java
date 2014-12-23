@@ -10,7 +10,6 @@ import static java.lang.Math.PI;
 import static java.lang.Math.cos;
 import static java.lang.Math.pow;
 import static java.lang.Math.sin;
-import static java.util.stream.Collectors.toList;
 
 /**
  * Created by alankstewart on 23/12/14.
