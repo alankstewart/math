@@ -16,7 +16,7 @@ import static java.lang.Math.sin;
  */
 public class TwoThousandLines {
 
-    private static final int SIZE = 768;
+    private static final int SIZE = 1024;
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
