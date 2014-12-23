@@ -15,9 +15,8 @@ import static java.util.stream.Collectors.toList;
 /**
  * Created by alankstewart on 23/12/14.
  */
-public class DrawLines {
+public class TwoThousandLines {
 
-    private static final int LINES = 2000;
     private static final int SIZE = 768;
     private static final int SCALE = SIZE * 15 / 32;
 
@@ -32,6 +31,8 @@ public class DrawLines {
     }
 
     static class LineComponent extends JComponent {
+
+        private static final int LINES = 2000;
 
         @Override
         public void paintComponent(Graphics g) {
