@@ -13,7 +13,7 @@ import static java.lang.Math.sin;
 import static java.util.stream.Collectors.toList;
 
 /**
- * Created by alanstewart on 23/12/14.
+ * Created by alankstewart on 23/12/14.
  */
 public class DrawLines {
 
@@ -25,7 +25,7 @@ public class DrawLines {
         SwingUtilities.invokeLater(() -> {
             JFrame jf = new JFrame("2000 Lines");
             jf.setSize(SIZE, SIZE);
-            jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             jf.add(new LineComponent());
             jf.setVisible(true);
         });
