@@ -3,6 +3,7 @@ package alankstewart.math;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
 import java.util.stream.IntStream;
 
 import static java.lang.Math.PI;
@@ -38,11 +39,15 @@ public class DrawLines {
             g2d.setColor(Color.DARK_GRAY);
             g2d.translate(SIZE / 2, SIZE / 2);
             g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            IntStream.rangeClosed(1, LINES).mapToObj(n -> new Line2D.Double(
-                    pow(sin(12 * PI * n / LINES), 3) * SCALE, pow(cos(10 * PI * n / LINES), 3) * SCALE,
-                    pow(sin(8 * PI * n / LINES), 3) * SCALE, pow(cos(6 * PI * n / LINES), 3) * SCALE))
-                    .collect(toList())
-                    .forEach(g2d::draw);
+            IntStream.rangeClosed(1, LINES).mapToObj(n -> getLine(n)).collect(toList()).forEach(g2d::draw);
+        }
+
+        private Line2D.Double getLine(int n) {
+            return new Line2D.Double(getPoint(12, 10, n), getPoint(8, 6, n));
+        }
+
+        private Point2D.Double getPoint(int l, int m, int n) {
+            return new Point2D.Double(pow(sin(l * PI * n / LINES), 3) * SCALE, pow(cos(m * PI * n / LINES), 3) * SCALE);
         }
     }
 }
