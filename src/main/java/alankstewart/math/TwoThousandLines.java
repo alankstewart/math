@@ -20,7 +20,7 @@ public class TwoThousandLines {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            JFrame jf = new JFrame("2000 Lines");
+            JFrame jf = new JFrame("Line Art");
             jf.setSize(SIZE, SIZE);
             jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             jf.add(new LineComponent());
