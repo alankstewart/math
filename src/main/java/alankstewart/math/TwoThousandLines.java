@@ -16,14 +16,16 @@ import static java.lang.Math.sin;
  */
 public class TwoThousandLines {
 
-    private static final int SIZE = 1024;
+    private static final int SIZE = 768;
 
     public static void main(String[] args) {
+        int size = args.length > 0 && args[0] != null && args[0].matches("-?\\d+") ? Integer.parseInt(args[0]) : SIZE;
+        Dimension d = new Dimension(size, size);
         SwingUtilities.invokeLater(() -> {
             JFrame jf = new JFrame("Line Art");
-            jf.setSize(SIZE, SIZE);
+            jf.setSize(d);
             jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            jf.add(new LineComponent());
+            jf.add(new LineComponent(d));
             jf.setVisible(true);
         });
     }
@@ -31,14 +33,21 @@ public class TwoThousandLines {
     static class LineComponent extends JComponent {
 
         private static final int LINES = 2000;
-        private static final int SCALE = SIZE * 15 / 32;
+
+        private Dimension d;
+        private double scale;
+
+        public LineComponent(Dimension d) {
+            this.d = d;
+        }
 
         @Override
         public void paintComponent(Graphics g) {
             Graphics2D g2d = (Graphics2D) g;
             g2d.setColor(Color.DARK_GRAY);
-            g2d.translate(SIZE / 2, SIZE / 2);
+            g2d.translate(d.getWidth() / 2, d.getHeight() / 2);
             g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            scale = d.getWidth() * 15 / 32;
             IntStream.rangeClosed(1, LINES).mapToObj(this::getLine).forEach(g2d::draw);
         }
 
@@ -47,7 +56,7 @@ public class TwoThousandLines {
         }
 
         private Point2D.Double getPoint(int l, int m, int n) {
-            return new Point2D.Double(pow(sin(l * PI * n / LINES), 3) * SCALE, pow(cos(m * PI * n / LINES), 3) * SCALE);
+            return new Point2D.Double(pow(sin(l * PI * n / LINES), 3) * scale, pow(cos(m * PI * n / LINES), 3) * scale);
         }
     }
 }
