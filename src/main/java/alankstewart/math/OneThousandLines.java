@@ -9,7 +9,7 @@ import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 
 /**
- * Created by alankstewart on 23/12/14.
+ * Created by alankstewart on 23/01/15.
  */
 public final class OneThousandLines extends AbstractLines {
 
