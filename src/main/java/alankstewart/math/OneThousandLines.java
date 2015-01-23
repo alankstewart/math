@@ -14,7 +14,7 @@ import static java.lang.Math.sin;
 /**
  * Created by alankstewart on 23/12/14.
  */
-public class TwoThousandLines {
+public class OneThousandLines {
 
     private static final int SIZE = 1024;
 
@@ -33,7 +33,7 @@ public class TwoThousandLines {
 
     static class LineComponent extends JComponent {
 
-        private static final int LINES = 2000;
+        private static final int LINES = 1000;
 
         private final double tx;
         private final double ty;
@@ -53,11 +53,14 @@ public class TwoThousandLines {
         }
 
         private Line2D.Double getLineSegment(final int n) {
-            return new Line2D.Double(getPoint(12, 10, n), getPoint(8, 6, n));
+            return new Line2D.Double(getPoint1(n), getPoint2(n));
         }
 
-        private Point2D.Double getPoint(final int l, final int m, final int n) {
-            return new Point2D.Double(pow(sin(l * PI * n / LINES), 3) * tx, pow(cos(m * PI * n / LINES), 3) * tx);
+        private Point2D.Double getPoint1(final int n) {
+            return new Point2D.Double(sin(4 * PI * n / LINES) * tx, cos(2 * PI * n / LINES) * tx);
+        }
+        private Point2D.Double getPoint2(final int n) {
+            return new Point2D.Double(0.5 * sin(8 * PI * n / LINES) * tx, 0.5 * cos(4 * PI * n / LINES) * tx);
         }
     }
 }
