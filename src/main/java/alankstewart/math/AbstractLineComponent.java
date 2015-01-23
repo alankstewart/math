@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 /**
  * Created by alanstewart on 23/01/15.
  */
-public abstract class AbstractLineComponent extends JComponent {
+abstract class AbstractLineComponent extends JComponent {
 
     protected final double tx;
     protected final double ty;

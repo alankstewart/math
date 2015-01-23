@@ -12,7 +12,7 @@ import static java.lang.Math.sin;
 /**
  * Created by alankstewart on 23/12/14.
  */
-public class TwoThousandLines extends AbstractLines {
+public final class TwoThousandLines extends AbstractLines {
 
     public static void main(final String[] args) {
         final int size = args.length > 0 && args[0] != null && args[0].matches("-?\\d+") ? Integer.parseInt(args[0]) : SIZE;

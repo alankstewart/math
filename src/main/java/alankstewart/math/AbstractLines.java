@@ -6,7 +6,7 @@ import java.awt.*;
 /**
  * Created by alankstewart on 23/01/15.
  */
-public abstract class AbstractLines {
+abstract class AbstractLines {
 
     protected static final int SIZE = 1024;
 
