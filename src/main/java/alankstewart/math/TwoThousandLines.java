@@ -12,7 +12,9 @@ import static java.lang.Math.sin;
 /**
  * Created by alankstewart on 23/12/14.
  */
-public final class TwoThousandLines extends AbstractLines {
+public final class TwoThousandLines implements Lines {
+
+    private static final int SIZE = 1024;
 
     public static void main(final String[] args) {
         final int size = args.length > 0 && args[0] != null && args[0].matches("-?\\d+") ? Integer.parseInt(args[0]) : SIZE;
@@ -21,15 +23,15 @@ public final class TwoThousandLines extends AbstractLines {
     }
 
     @Override
-    protected AbstractLineComponent getLineComponent(final Dimension d) {
-        return new LineComponent(d);
+    public LineComponent getLineComponent(final Dimension d) {
+        return new TwoThousandLinesComponent(d);
     }
 
-    static class LineComponent extends AbstractLineComponent {
+    static class TwoThousandLinesComponent extends LineComponent {
 
         private static final int LINES = 2000;
 
-        public LineComponent(final Dimension d) {
+        public TwoThousandLinesComponent(final Dimension d) {
             super(d);
         }
 

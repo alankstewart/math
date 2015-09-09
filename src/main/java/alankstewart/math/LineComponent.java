@@ -8,12 +8,12 @@ import java.util.stream.IntStream;
 /**
  * Created by alanstewart on 23/01/15.
  */
-abstract class AbstractLineComponent extends JComponent {
+abstract class LineComponent extends JComponent {
 
     protected final double tx;
     protected final double ty;
 
-    public AbstractLineComponent(final Dimension d) {
+    public LineComponent(final Dimension d) {
         tx = d.getWidth() / 2.0;
         ty = d.getHeight() / 2.0;
     }

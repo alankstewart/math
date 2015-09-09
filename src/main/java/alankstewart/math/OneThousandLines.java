@@ -11,7 +11,9 @@ import static java.lang.Math.sin;
 /**
  * Created by alankstewart on 23/01/15.
  */
-public final class OneThousandLines extends AbstractLines {
+public final class OneThousandLines implements Lines {
+
+    private static final int SIZE = 1024;
 
     public static void main(final String[] args) {
         final int size = args.length > 0 && args[0] != null && args[0].matches("-?\\d+") ? Integer.parseInt(args[0]) : SIZE;
@@ -20,15 +22,15 @@ public final class OneThousandLines extends AbstractLines {
     }
 
     @Override
-    protected AbstractLineComponent getLineComponent(final Dimension d) {
-        return new LineComponent(d);
+    public LineComponent getLineComponent(final Dimension d) {
+        return new OneThousandLinesComponent(d);
     }
 
-    static class LineComponent extends AbstractLineComponent {
+    static class OneThousandLinesComponent extends LineComponent {
 
         private static final int LINES = 1000;
 
-        public LineComponent(final Dimension d) {
+        public OneThousandLinesComponent(final Dimension d) {
             super(d);
         }
 

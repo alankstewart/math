@@ -6,11 +6,11 @@ import java.awt.*;
 /**
  * Created by alankstewart on 23/01/15.
  */
-abstract class AbstractLines {
+public interface Lines {
 
-    protected static final int SIZE = 1024;
+    LineComponent getLineComponent(final Dimension d);
 
-    protected void display(final int size) {
+    default void display(final int size) {
         final Dimension d = new Dimension(size, size);
         SwingUtilities.invokeLater(() -> {
             final JFrame jf = new JFrame("Line Art");
@@ -22,5 +22,4 @@ abstract class AbstractLines {
         });
     }
 
-    protected abstract AbstractLineComponent getLineComponent(final Dimension d);
 }
