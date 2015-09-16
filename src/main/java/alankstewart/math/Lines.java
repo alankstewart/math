@@ -21,5 +21,4 @@ public interface Lines {
             jf.setVisible(true);
         });
     }
-
 }
