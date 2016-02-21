@@ -7,14 +7,14 @@ import scala.annotation.tailrec
   */
 object Fibonacci extends App {
 
-  Range.inclusive(0, 35).foreach(i => println(fib(i)))
+  Range.inclusive(0, 35).foreach(i => println(i + ": " + fib(i)))
 
   def fib(n: Int) = {
     @tailrec
     def fibTail(n: Int, a: BigInt, b: BigInt): BigInt = n match {
       case 0 => a
       case 1 => b
-      case _ => fibTail(n - 1, b, b + a)
+      case _ => fibTail(n - 1, b, a + b)
     }
     fibTail(n, 0, 1)
   }
