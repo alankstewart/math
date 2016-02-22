@@ -22,7 +22,7 @@ abstract class LineComponent(d: Dimension) extends JComponent {
     g2d.setColor(Color.DARK_GRAY)
     g2d.translate(tx, ty)
     g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
-    Range.inclusive(1, getLines).map(getLineSegment).foreach(s => g2d.draw(s))
+    Range.inclusive(1, getLines).map(getLineSegment).foreach(g2d.draw)
   }
 
   def getLines: Int
