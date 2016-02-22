@@ -1,8 +1,10 @@
 package alankstewart.math.lineart
 
-import java.awt.geom.Line2D
 import java.awt._
+import java.awt.geom.Line2D
 import javax.swing.JComponent
+
+import scala.swing.Graphics2D
 
 /**
   * Created by alanstewart on 22/02/2016.
