@@ -1,4 +1,4 @@
-package alankstewart.math;
+package alankstewart.math.lines;
 
 import java.awt.*;
 import java.awt.geom.Line2D;

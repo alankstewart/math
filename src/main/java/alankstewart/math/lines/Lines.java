@@ -1,4 +1,4 @@
-package alankstewart.math;
+package alankstewart.math.lines;
 
 import javax.swing.*;
 import java.awt.*;
