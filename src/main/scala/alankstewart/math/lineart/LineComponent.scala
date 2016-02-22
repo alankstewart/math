@@ -25,7 +25,7 @@ abstract class LineComponent(d: Dimension) extends JComponent {
     Range.inclusive(1, getLines).map(getLineSegment).foreach(g2d.draw)
   }
 
-  def getLines: Int
+  protected def getLines: Int
 
-  def getLineSegment(n: Int): Line2D.Double
+  protected def getLineSegment(n: Int): Line2D.Double
 }
